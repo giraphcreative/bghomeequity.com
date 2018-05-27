@@ -1,0 +1,278 @@
+
+
+// color variables
+$grey: #414042;
+$grey-light: lighten( $grey, 30% );
+$blue: #0E426A;
+$blue-dark: #214099;
+$navy: #002856;
+$teal: #4AACC4;
+$green: #66BD5A;
+$lime: #A2CE4D;
+$yellow: #FFF200;
+$fawn: #EED9C2;
+$red: #D22E27;
+$seafoam: #7EABA1;
+
+
+@import "reset";
+
+@import "fonts";
+
+@import "mixins";
+
+@import "base";
+
+@import "grid";
+
+
+
+body {
+	background: $fawn;
+}
+
+// background-container
+.wrap {
+	max-width: 900px;
+	margin: 0 auto;
+}
+
+
+.header {
+	display: block;
+
+	@include respond-to( 768px ) {
+		margin: 30px 0;
+	}
+}
+
+
+.form-title {
+	display: block;
+	height: 50px;
+	margin-left: -20px;
+	background: url(../img/bg-flag-right.png) right center no-repeat;
+	background-size: cover;
+	color: white;
+	font-size: 25px;
+	line-height: 50px;
+	padding: 0;
+	text-align: center;
+	text-transform: uppercase;
+
+	@include respond-to( 768px ) {
+		max-width: 56%;
+	}
+}
+
+
+.content {
+	position: relative;
+	background: $grey;
+	color: white;
+	padding: 20px 20px 40px 20px;
+	@include clearfix;
+
+	h1 {
+		@include font-title;
+		color: white;
+
+		@include respond-to( 1024px ) {
+			span {
+				display: block;
+			}
+		}
+	}
+	
+	p {
+		font-size: 1.2em;
+		line-height: 1.5em;
+	}
+
+	.half:last-child { 
+		padding-top: 20px;
+
+		.right-content {
+			padding: 20px 0;
+		}
+	}
+
+	@include respond-to( 768px ){
+		.half:first-child {
+			width: 51%;
+		}
+
+		.half:nth-child(2) {
+			width: 43%;
+			padding: 0 2%;
+		}
+	}
+}
+
+
+.calculator-container {
+	.calculator {
+		.result {
+			display: none;
+		}
+	}
+
+	.total-savings-container {
+		padding: 15px 20px 15px 25px;
+
+		@include respond-to( 768px ) {
+			border-radius: 20px;
+			margin: 20px 0;
+		}
+
+		.half {
+			float: left;
+			width: 48%;
+			margin: 0 1%;
+		}
+
+		.half.first {
+			padding-left: 0;
+			margin-left: 0;
+			width: 38%;
+		}
+
+		.half.result-total-savings {
+			background: white;
+			border-radius: 20px;
+			width: 58%;
+			font-size: 30px;
+			line-height: 35px;
+			color: $grey;
+			background: white url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAeBAMAAACcf1DPAAAAIVBMVEUAAACkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKT7b4aZAAAACnRSTlMAm4ApQMYQ3W1QNQOf6wAAAIRJREFUKM9joA3gVMMlw7qEZJmkqlXLG7BJsFWtWrVKAJsM46pKl4kTsMlwrXLAYQ3XchCJXY8BkMRuz6IE7DLMq1YtxKErESiFQ5fRqlUBOKxiWrUYl/ukFuGS6cIpE4VVhiOBgQO7PVarQnGEddcqoH+w2sGiGLXQgHrpgIHZjYGWAADGBCLRA4y1vAAAAABJRU5ErkJggg==') left center no-repeat;
+			padding: 15px 10px 15px 30px;
+		}
+	}
+	
+}
+
+
+.footer {
+	a {
+		text-decoration: none;
+	}
+
+	.wrap {
+		padding: 20px;
+	}
+
+	.logo {
+		text-align: center;
+
+		@include respond-to( 768px ) {
+			float: left;
+			width: 30%;
+		}
+	}
+
+	.footer-content {
+		text-align: center;
+		color: $navy;
+		text-transform: uppercase;
+		margin: 0;
+
+		@include respond-to( 768px ) {
+			float: left;
+			width: 52%;
+			padding: 20px 0 0;
+		}
+	}
+
+	h3 {
+		font-size: 1.4em;
+
+		@include respond-to( 768px ) {
+			padding: 5px 0;
+		}
+	}
+
+	h2 {
+		font-size: 1.7em;
+		font-weight: bold;
+
+		@include respond-to( 768px ) {
+			font-size: 2em;
+			padding: 5px 0;
+		}
+	}
+}
+
+.contact-bar {
+	background: $seafoam;
+	text-align: center;
+	padding: 10px 0;
+	font-size: .9em;
+	line-height: 1.6em;
+	
+	a {
+		color: white;
+	}
+
+	@include respond-to( 768px ) {
+		text-align: left;
+		line-height: 50px;
+	}
+	
+	img {
+		display: none;
+		
+		@include respond-to( 768px ) {
+			display: block;
+			float: left;
+			margin-right: 5px;
+		}
+	}
+
+
+}
+
+.disclaimer {
+	@include clearfix;
+	font-size: .7em;
+	line-height: 1.2em;
+	padding: 20px;
+
+	img {
+		float: right;
+		margin: 0 0 10px 10px;
+	}
+}
+
+
+// colors
+.bg-blue { background: $blue; }
+.bg-blue-dark { background: $blue-dark; }
+.bg-teal { background: $teal; }
+.bg-green { background: $green; }
+.bg-lime { background: $lime; }
+.bg-seafoam { background: $seafoam; }
+
+
+
+// button styles
+input[type=submit], button, .btn {
+	@include font-title;
+	padding: 15px 30px;
+	background: $seafoam;
+	color: white;
+	border: 0;
+	border-radius: 20px;
+	font-size: 1.2em;
+	line-height: 1.4em;
+	text-transform: uppercase;
+	display: inline-block;
+	cursor: pointer;
+	text-align: center;
+	
+	&:hover {
+		opacity: lighten( $teal, 5% );
+	}
+}
+
+
+
