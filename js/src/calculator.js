@@ -16,17 +16,10 @@ $(function(){
 		if ( isNaN( resultThree ) ) {
 			resultThree = 0;
 		}
-		console.log( typeof( resultOne ) );
-		console.log( typeof( resultTwo ) );
-		console.log( typeof( resultThree ) );
-		console.log( resultOne );
-		console.log( resultTwo );
-		console.log( resultThree );
 		var totalSavings = resultOne + resultTwo + resultThree;
 		if ( totalSavings === 'NaN' ) {
 			totalSavings = 0;
 		}
-		console.log( totalSavings );
 		$(".result-total-savings").html( totalSavings );
 	}
 
